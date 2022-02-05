@@ -32,6 +32,3 @@ class AddStoryView(generic.CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-class ProfileView(generic.DetailView):
-    model = Profile
-    
