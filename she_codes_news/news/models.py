@@ -9,4 +9,13 @@ class NewsStory(models.Model):
         on_delete=models.CASCADE
     )
     pub_date = models.DateTimeField()
-    content = models.TextField()
+    content = models.TextField() 
+    # categories = models.TextChoices('News', 'cupcakes')
+
+    categories = (
+        ("NEWS", "News"),
+        ("CUPCAKES", "Cupcakes"),
+        ("THINGS", "Things"),
+    )
+
+    category = models.CharField(max_length=200, choices = categories, default="News")
