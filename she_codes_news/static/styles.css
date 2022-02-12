@@ -1,30 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;700;800&family=Satisfy&display=swap');
+
+
+/* :root {
+    --main-font: 'Raleway', sans-serif;
+    --highlight-font: 'Satisfy', cursive;
+    --bg-light: #f0f0f0;
+    --accent: #8246af; 
+} */
+
+:root {
+    --main-font: 'DM Sans', sans-serif;
+    --standard-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bg-dark: #083fd0;
+    --bg-mid: #1751f0;
+    --bg-light: #f0f0f0;
+    --dark-font: #0839c1;
+    --shadow-font: #444444;
+    --light-font: #fffffb;
+    --primary-color: #083fd0;
+    --secondary-color: #F609C7;
+    --tertiary-color: #fffffb;
+    --primary-shadow: #0839c1;
+    --secondary-shadow: #d718b1;
+    --tertiary-shadow: #ebebe6;
+    --highlight-color: #1ce2f0;
+    --box-shadow-blue: 0px 2px 15px 2px var(--primary-shadow);
+    --box-shadow-pink: 0px 2px 15px 2px var(--secondary-shadow);
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+  
+}
 
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: var(--bg-light);
+    font-family: var(--main-font);   
 }
 
 header {
     display: flex;
+    background-color: var(--bg-light);
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
+    padding: 10px;
+    
 }
+
+/* .nav {
+    background-color: var(--bg-dark);
+} */
 
 img {
     filter: grayscale(100%);
 }
 
+img:hover {
+    filter: unset;
+}
+
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    /* font-family: var(--main-font); */
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
 }
 
-h2 {
+/* h2 {
    font-family: 'Montserrat Subrayada', sans-serif; 
-}
+} */
 
 h3 {
     font-size: 2rem;
@@ -49,6 +95,17 @@ a {
     color: #000;
 }
 
-a, p {
-    font-family: monospace;
+.nav a {
+    color: var(--dark-font);
 }
+
+.title-text {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.highlight-text {
+    color: var(--primary-color);
+    
+}
+

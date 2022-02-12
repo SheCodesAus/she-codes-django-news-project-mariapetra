@@ -2,6 +2,8 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
+from django.views.generic import DeleteView
+
 
 
 class IndexView(generic.ListView):
@@ -31,4 +33,8 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+# class DeleteStory(generic.DeleteView):
+#     form_class = StoryForm
+  
 

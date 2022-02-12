@@ -10,14 +10,16 @@
         <meta name="author" content="Maria Claydon">
         <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+
+        {% endblock %}
     </head>
 
     <body>
         <header>
             <div id="header-text">
-                <a id="header-link" href="{% url 'news:index' %}">
-                    <h1>She {Codes} News</h1>
+                <a id="header-link" class="header" href="{% url 'news:index' %}">
+                    <h1 class="title-text">She <span class="highlight-text">{Codes}</span> News</h1>
                 </a>
             </div>
             <!-- include nav here -->
