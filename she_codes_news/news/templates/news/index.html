@@ -9,6 +9,7 @@
 
 {% if request.user.is_authenticated %}
 <a href="{% url 'news:newStory' %}">Hi! {{request.user.username}}. Write New Story</a>
+
 {% endif %}
 
 <h2>Latest News</h2>
@@ -23,7 +24,10 @@
         {% endif %}
     </div>
 
+    <h2>All Stories</h2>
+
     <div id="all-stories">
+    
         {% if all_stories %}
             {% for story in all_stories %}
                 {% include "./StoryCard.html" with story=story %}

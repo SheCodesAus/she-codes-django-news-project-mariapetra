@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ newsstory.title }}
+<form method="POST" action="#">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ammend</button>
+</form>
+
+{% endblock content %}
