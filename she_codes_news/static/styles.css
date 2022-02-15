@@ -146,8 +146,8 @@ a {
 }
 
 
-button {
-    background-color: var(--bg-color-dark);
+button,
+input {
     color: var(--light-font);
     justify-content: center;
     border: unset;
@@ -156,13 +156,27 @@ button {
     border-radius: 20px;
     font-size: 15px;
     font-weight: var(--bold-font);
-    margin-left: 70px;
     margin-top: 10px;
+    background-color: var(--bg-light);
+    color: var(--secondary-color);
     
 } 
 
-button:hover {
+button:hover,
+input:hover {
     background-color: var(--secondary-color);
     color: var(--light-font);
 }
+
+.form-section {
+    margin: 0 auto;
+    width: 100%;
+    color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--highlight-color);
+}
+
+
 

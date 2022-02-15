@@ -9,8 +9,9 @@
         <div class="story-card-text">
             <container class="container">
                 <h3>{{ story.title }}</h3>
-                <h4>{{ story.author }}</h4>
-                <h4>{{ story.pub_date }}</h4>
+                <h4>Written by: {{ story.author }}</h4>
+                <h4>Published on: {{ story.pub_date }}</h4>
+                <h4>Category: {{ story.category}}</h4>
     
                 {% if request.user.is_authenticated %}
                 <button class="story-button"><a href="{% url 'news:ammend' story.id %}">Edit this story</a></button>
