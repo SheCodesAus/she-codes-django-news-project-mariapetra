@@ -21,7 +21,7 @@
 .story-button a {
     color: var(--light-font);
 }
-/* #latest-stories { */
+/* #latest-stories {  */
     /* display: flex;
     flex-flow: column space-between; */
     /* max-width: 100%; */
@@ -75,7 +75,7 @@
     width: 33%;
     height: 100%;
     margin-right: 5px;
-} */
+}
 
 
 all-stories {
