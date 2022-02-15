@@ -10,10 +10,10 @@ class NewsStory(models.Model):
     )
     pub_date = models.DateTimeField()
     content = models.TextField() 
+    image=models.URLField(null=True, blank=True)
+
     class Meta: 
         ordering = ['-pub_date']
-
-
 
     categories = (
         ("NEWS", "News"),
@@ -22,3 +22,4 @@ class NewsStory(models.Model):
     )
 
     category = models.CharField(max_length=200, choices = categories, default="News")
+

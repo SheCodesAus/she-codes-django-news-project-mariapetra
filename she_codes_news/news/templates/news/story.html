@@ -14,6 +14,10 @@
         <img src="https://picsum.photos/600">
         {{ story.content|linebreaks }}
     </div>
+    {% for post in list_of_posts %}
+        {{ post.title }}
+        <img src="{{ story.image }}"
+        {% endfor %}
 </div>
 
 {% endblock %}

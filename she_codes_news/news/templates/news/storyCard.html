@@ -1,17 +1,17 @@
 
 <div class="story-card" id="story-card-{{ position }}">
     <a href="{% url 'news:story' story.id %}">
-        {% if position < 1 %}
-            <img src="../static/news/images/placeholder-{{ position }}.jpg">
+      {% if story.image %}
+            <img src="{{ story.image }}">
         {% else %}
             <img src="https://picsum.photos/600">
         {% endif %} 
         <div class="story-card-text">
             <container class="container">
-                <h3>{{ story.title }}</h3>
-                <h4>Written by: {{ story.author }}</h4>
-                <h4>Published on: {{ story.pub_date }}</h4>
-                <h4>Category: {{ story.category}}</h4>
+                <h3>{{ story.title }}</h3><a href="{% url 'users:profile' story.author.id %}">
+                <h4>Written by | {{ story.author }}</h4>
+                <h4>Published | {{ story.pub_date }}</h4>
+                <h4>Category | {{ story.category}}</h4>
     
                 {% if request.user.is_authenticated %}
                 <button class="story-button"><a href="{% url 'news:ammend' story.id %}">Edit this story</a></button>
@@ -21,6 +21,7 @@
                {% if request.user.is_authenticated %}
                 <button class="story-button"><a href="{% url 'news:delete' story.id %}">Delete</a></button>
                {% endif %}
+               
             </container>
         </div>
     </a>
