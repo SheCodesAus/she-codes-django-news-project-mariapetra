@@ -1,7 +1,9 @@
 from django.contrib import admin
 
 # Register your models here.
-from.models import NewsStory
+from.models import NewsStory, Category
 
 admin.site.register(NewsStory)
+admin.site.register(Category)
+
 # django then knows this is admin user
