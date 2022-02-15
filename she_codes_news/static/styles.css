@@ -2,14 +2,14 @@
 
 
 /* :root {
-    --main-font: 'Raleway', sans-serif;
+    --main-font: 'DM Sans', sans-serif; 
     --highlight-font: 'Satisfy', cursive;
     --bg-light: #f0f0f0;
     --accent: #8246af; 
 } */
 
 :root {
-    --main-font: 'DM Sans', sans-serif;
+    --main-font: 'Raleway', sans-serif;
     --standard-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
@@ -44,14 +44,51 @@ header {
     background-color: var(--bg-light);
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
-    padding: 10px;
-    
+    padding: 10px;   
 }
 
-/* .nav {
-    background-color: var(--bg-dark);
-} */
+.navbar {
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+
+.navbar a {
+    color: var(--dark-font);
+    font-weight: var(--bolder-font);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    color: var(--light-font);
+    background-color: var(--secondary-color);
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+  
+.navbar ul {
+    display: flex;
+    gap: 3rem;
+    margin-right: 1.2rem;
+}
+
+.navbar ul li {
+    list-style-type: none;
+    margin: 1rem;
+    justify-items: flex-end;
+}
+
 
 img {
     filter: grayscale(100%);
@@ -68,9 +105,9 @@ h1 {
     margin: 0;
 }
 
-/* h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
-} */
+.heading-text {
+    color: var(--secondary-color);
+}
 
 h3 {
     font-size: 2rem;
@@ -92,7 +129,7 @@ nav {
 a {
     margin: 2px;
     text-decoration: none;
-    color: #000;
+    color: var(--dark-font)
 }
 
 .nav a {
@@ -105,7 +142,27 @@ a {
 }
 
 .highlight-text {
-    color: var(--primary-color);
+    color: var(--primary-color);  
+}
+
+
+button {
+    background-color: var(--bg-color-dark);
+    color: var(--light-font);
+    justify-content: center;
+    border: unset;
+    padding-bottom: 2rem;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: var(--bold-font);
+    margin-left: 70px;
+    margin-top: 10px;
     
+} 
+
+button:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-font);
 }
 

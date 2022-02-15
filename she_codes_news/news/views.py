@@ -37,6 +37,8 @@ class DeleteStoryView(generic.DeleteView):
     model = NewsStory
     success_url = reverse_lazy('news:index')
 
+
+
 class AmmendStoryView(generic.UpdateView):
     form_class = StoryForm
     model = NewsStory

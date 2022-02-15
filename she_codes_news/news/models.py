@@ -10,7 +10,10 @@ class NewsStory(models.Model):
     )
     pub_date = models.DateTimeField()
     content = models.TextField() 
-    # categories = models.TextChoices('News', 'cupcakes')
+    class Meta: 
+        ordering = ['-pub_date']
+
+
 
     categories = (
         ("NEWS", "News"),

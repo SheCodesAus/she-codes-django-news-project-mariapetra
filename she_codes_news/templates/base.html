@@ -10,22 +10,35 @@
         <meta name="author" content="Maria Claydon">
         <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+
         {% block stylesheets %}
 
         {% endblock %}
     </head>
 
     <body>
-        <header>
-            <div id="header-text">
-                <a id="header-link" class="header" href="{% url 'news:index' %}">
-                    <h1 class="title-text">She <span class="highlight-text">{Codes}</span> News</h1>
-                </a>
-            </div>
-            <!-- include nav here -->
-            {% include './nav.html' %}
+        <header>    
+            {% comment %} <section class="header-social-section">
+
+            </section>  {% endcomment %}
+            <section class="header-nav-section">
+                <div id="header-text">
+                    <a id="header-link" class="header" href="{% url 'news:index' %}">
+                        <h1 class="title-text">She <span class="highlight-text">{Codes}</span> News</h1>
+                    </a>
+                </div>
+                <!-- include nav here -->
+                {% include './nav.html' %}
+            </section>
         </header>
 
-        {% block content %}{% endblock %}
+        {% block content %}
+        
+        {% endblock %}
     </body>
 </html>
+
+ {% comment %} <a class="logo" href="{% url 'news:index' %}">
+                <img class="logo" src="{% static 'news/images/logo3.png' %}" alt="She Codes Logo"/> 
+            </a>  {% endcomment %}

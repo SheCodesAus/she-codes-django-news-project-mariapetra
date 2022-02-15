@@ -3,9 +3,13 @@
 {% block content %}
 
 {{ newsstory.title }}
+<br>
+{{ newsstory.content }}
+{{ newsstory.image}}
 <form method="POST" action="#">
     {% csrf_token %}
     {{ form.as_p }}
+    <h1>Are you sure you want to delete {{ newsstory.title }}?</h1>
     <button type="submit">Delete</button>
 </form>
 
