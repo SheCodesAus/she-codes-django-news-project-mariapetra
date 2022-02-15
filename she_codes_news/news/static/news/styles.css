@@ -1,4 +1,7 @@
-
+.latest-stories {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .story-card {
     margin: 2rem;
     border-radius: 20px;
@@ -102,6 +105,8 @@ all-stories {
 .story-section {
     margin: 0;
     padding: 2rem;
+    display: flex;
+    
 }
 
 .story-wrapper {
