@@ -4,6 +4,7 @@ from .models import NewsStory
 from .forms import StoryForm
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -23,7 +24,7 @@ class StoryView(generic.DetailView):
     template_name = 'news/story.html'
     context_object_name = 'story'
 
-class AddStoryView(generic.CreateView):
+class AddStoryView(LoginRequiredMixin, generic.CreateView):
     form_class = StoryForm
     context_object_name = 'storyForm'
     template_name = 'news/createStory.html'
@@ -33,13 +34,13 @@ class AddStoryView(generic.CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-class DeleteStoryView(generic.DeleteView):
+class DeleteStoryView(LoginRequiredMixin, generic.DeleteView):
     model = NewsStory
     success_url = reverse_lazy('news:index')
 
 
 
-class AmmendStoryView(generic.UpdateView):
+class AmmendStoryView(LoginRequiredMixin, generic.UpdateView):
     form_class = StoryForm
     model = NewsStory
     context_object_name = 'storyForm'
