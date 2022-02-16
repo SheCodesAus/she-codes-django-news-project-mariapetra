@@ -10,16 +10,16 @@
 
 {% block content %}
 
+{% include './news-hero.html' %}
 
-    <section class="story-section">
-        
+    <section class="story-section">       
         <div id="latest-stories">
             <h2 class="heading-text">Latest News</h2>
             {% if request.user.is_authenticated %}
             <container class="welcome-back">
              <a class="welcome-back" href="{% url 'news:newStory' %}">Welcome Back! {{request.user.username}}. <button>Write a new story</button></a>
             </container>
-{% endif %}
+            {% endif %}
             {% if latest_stories %}
                 {% for story in latest_stories %}
                     {% include "./storyCard.html" with story=story position=forloop.counter %}
@@ -34,7 +34,6 @@
     <section class="story-section">
         <div id="all-stories">
             <h2 class="heading-text">All Stories</h2>
-        
                 {% if all_stories %}
                     {% for story in all_stories %}
                         {% include "./StoryCard.html" with story=story %}

@@ -18,19 +18,21 @@
     </head>
 
     <body>
+        <section>
+            {% include './socials.html' %}
+        </section>
+        
         <header>    
-            {% comment %} <section class="header-social-section">
+            
 
-            </section>  {% endcomment %}
-            <section class="header-nav-section">
                 <div id="header-text">
                     <a id="header-link" class="header" href="{% url 'news:index' %}">
-                        <h1 class="title-text">She <span class="highlight-text">{Codes}</span> News</h1>
+                       <h1 class="title-text">She <span class="highlight-text">{Codes}</span> News</h1>
                     </a>
                 </div>
                 <!-- include nav here -->
                 {% include './nav.html' %}
-            </section>
+            {% comment %} </section> {% endcomment %}
         </header>
 
         {% block content %}
