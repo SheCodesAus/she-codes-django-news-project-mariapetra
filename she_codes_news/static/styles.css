@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;700;800&family=Satisfy&display=swap');
 
 
-/* :root {
-    --main-font: 'DM Sans', sans-serif; 
-    --highlight-font: 'Satisfy', cursive;
-    --bg-light: #f0f0f0;
-    --accent: #8246af; 
-} */
-
 :root {
     --main-font: 'Raleway', sans-serif;
+    --highlight-text: 'Satisfy', cursive;
     --standard-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
@@ -178,7 +172,8 @@ a {
 
 button,
 input,
-.story-card button a {
+.story-card button a,
+.form-section textarea {
     color: var(--light-font);
     justify-content: center;
     border: unset;
@@ -195,6 +190,7 @@ input,
 
 button:hover,
 input:hover,
+.form-section textarea:hover,
 .story-card button:hover a{
     background-color: var(--secondary-color);
     color: var(--dark-font);
@@ -219,15 +215,6 @@ input:hover,
     color: var(--secondary-color);
 }
 
-/* .hero-img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    object-position: left;
-    filter: invert(50%);
-}
- */
-
  .hero {
     height: 500px;
     width: 100%;
@@ -239,4 +226,22 @@ input:hover,
     background: linear-gradient(to top, #3204fdba, #9907facc), url("https://spacecubed.com/wp-content/uploads/2020/06/pssmileproduction_shecodes-115-scaled.jpg") no-repeat center;
   }
 
+  .footer {
+    margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #000000;
+      color: #f0f0f0;
+      padding-left: 20%;
+  }
+
+  .highlight {
+    font-family: var(--highlight-text);
+    font-size: 50px;
+}
+
+.story-footer {
+    margin-top: 100px;
+}
 
