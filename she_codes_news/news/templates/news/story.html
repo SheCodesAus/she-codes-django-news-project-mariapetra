@@ -7,11 +7,14 @@
 
 {% block content %}
 
+<div class="hero">
+    <h1>Write your story to <span class="highlight">inspire</span> our community</h1>
+</div>
+
 <div class="story-wrapper">
-    <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
+    <h4 class="story-author">Written by | {{ story.author }}</h4>
+    <h2 class="story-title">Title | {{ story.title }}</h2>
     <div class="story-content">
-        {% comment %} <img src="https://picsum.photos/600"> {% endcomment %}
         {{ story.content|linebreaks }}
     </div>
     {% for post in list_of_posts %}

@@ -17,7 +17,6 @@
                 <button class="story-button"><a href="{% url 'news:ammend' story.id %}">Edit this story</a></button>
                 <br>
                {% endif %}
-                <!-- Add an delete button for logged in users -->
                {% if request.user.is_authenticated %}
                 <button class="story-button"><a href="{% url 'news:delete' story.id %}">Delete</a></button>
                {% endif %}
@@ -26,4 +25,3 @@
         </div>
     </a>
 </div>
-{% comment %} id="story-card-{{ position }} {% endcomment %}

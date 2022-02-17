@@ -236,12 +236,18 @@ input:hover,
       padding-left: 20%;
   }
 
-  .highlight {
+.highlight {
     font-family: var(--highlight-text);
     font-size: 50px;
 }
 
 .story-footer {
     margin-top: 100px;
+}
+
+.login-section {
+    margin: 40%;
+    display: block;
+    justify-content: center;
 }
 

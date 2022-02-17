@@ -16,7 +16,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    box-shadow: var(--box-shadow-blue);
+    /* box-shadow: var(--box-shadow-blue); */
     margin: 50px;
 }
 
@@ -45,7 +45,32 @@
 
 .welcome-back {
     font-size: 20px;
-    /* padding: 10px; */
 }
 
+.highlight {
+    font-family: var(--);
+}
 
+.story-content,
+.story-title,
+.story-author {
+    padding: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--dark-font);
+    margin: 100px;
+}
+
+.story-title {
+    color: var(--secondary-color);
+    border-bottom: 2px var(--dark-font) solid;
+}
+
+.story-title,
+.highlight-text-login {
+    font-size: 50px;
+}
+
+.highlight-text-login {
+    margin: 0 auto;
+}

@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
 
 {% block content %}
+<div class="hero">
+    <h1>Login to create</h1>
+</div>
 
-<h2>Login</h2>
 
-<form method="post">
+<form class="form-section" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
-
+<container class="heading-text">
+<h2>No login? </h2>
 <a href="{% url 'users:createAccount' %}">Create Account</a>
-
+</container>
+<footer>
+</footer>
 
 {% endblock %}
 
