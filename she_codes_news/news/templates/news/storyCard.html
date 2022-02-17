@@ -1,5 +1,5 @@
 
-<div class="story-card" id="story-card-{{ position }}">
+<div class="story-card">
     <a href="{% url 'news:story' story.id %}">
       {% if story.image %}
             <img src="{{ story.image }}">
@@ -26,3 +26,4 @@
         </div>
     </a>
 </div>
+{% comment %} id="story-card-{{ position }} {% endcomment %}

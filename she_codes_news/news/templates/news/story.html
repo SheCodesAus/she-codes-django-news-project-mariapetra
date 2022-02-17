@@ -7,11 +7,11 @@
 
 {% block content %}
 
-<div id="story-wrapper">
+<div class="story-wrapper">
     <h2>{{ story.title }}</h2>
     <h4>{{ story.author }}</h4>
-    <div id="story-content">
-        <img src="https://picsum.photos/600">
+    <div class="story-content">
+        {% comment %} <img src="https://picsum.photos/600"> {% endcomment %}
         {{ story.content|linebreaks }}
     </div>
     {% for post in list_of_posts %}
