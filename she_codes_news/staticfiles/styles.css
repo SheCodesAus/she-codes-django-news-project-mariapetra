@@ -1,31 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;700;800&family=Satisfy&display=swap');
 
 
-/* :root {
-    --main-font: 'DM Sans', sans-serif; 
-    --highlight-font: 'Satisfy', cursive;
-    --bg-light: #f0f0f0;
-    --accent: #8246af; 
-} */
-
 :root {
     --main-font: 'Raleway', sans-serif;
+    --highlight-text: 'Satisfy', cursive;
     --standard-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
-    --bg-dark: #083fd0;
-    --bg-mid: #1751f0;
+    --bg-dark: #8246af;
+    --bg-mid: #ffba00;
     --bg-light: #f0f0f0;
-    --dark-font: #0839c1;
+    --dark-font: #8246af;
     --shadow-font: #444444;
-    --light-font: #fffffb;
+    --light-font: #ffba00;
     --primary-color: #083fd0;
-    --secondary-color: #F609C7;
-    --tertiary-color: #fffffb;
-    --primary-shadow: #0839c1;
-    --secondary-shadow: #d718b1;
-    --tertiary-shadow: #ebebe6;
-    --highlight-color: #1ce2f0;
+    --secondary-color: #ffba00;
+    --tertiary-color: #fdeca7;
+    --primary-shadow: #8246af;
+    --secondary-shadow: #ffba00;
+    --tertiary-shadow: #ffba00;
+    --highlight-color: #000000;
     --box-shadow-blue: 0px 2px 15px 2px var(--primary-shadow);
     --box-shadow-pink: 0px 2px 15px 2px var(--secondary-shadow);
     --bottom-margin: 0.5rem;
@@ -37,6 +31,9 @@
 body {
     background-color: var(--bg-light);
     font-family: var(--main-font);   
+    margin: 0 auto;
+    width: 100%;
+
 }
 
 header {
@@ -44,10 +41,23 @@ header {
     background-color: var(--bg-light);
     align-items: center;
     justify-content: space-between;
-    padding: 10px;   
+    width: 100%;
+    margin: 0;
 }
 
 .navbar {
+    padding: 20px 20px;
+}
+
+.social-item img {
+    width: 20px;
+    height: 20px;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+    padding: 0;
+}
+.navbar,
+.socials {
     width: 100%;
     min-height: 70px;
     display: flex;
@@ -55,14 +65,17 @@ header {
     align-items: center;
 }
 
-.nav-menu{
+.nav-menu,
+.social-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 60px;
   }
 
-.navbar a {
+
+.navbar a
+ {
     color: var(--dark-font);
     font-weight: var(--bolder-font);
     text-transform: uppercase;
@@ -70,31 +83,42 @@ header {
     font-size: 1rem;
 }
 
-.navbar a:hover {
-    color: var(--light-font);
+.navbar a:hover
+{
+    color: var(--dark-font);
     background-color: var(--secondary-color);
     font-size: 1.2rem;
     text-decoration: underline;
 }
   
-.navbar ul {
+.navbar ul,
+.socials ul {
     display: flex;
     gap: 3rem;
     margin-right: 1.2rem;
 }
 
-.navbar ul li {
+.navbar ul li,
+.socials ul li {
     list-style-type: none;
     margin: 1rem;
     justify-items: flex-end;
 }
 
+.socials {
+    background-color: var(--bg-dark);
+    padding: 0;
 
-img {
+}
+
+.title-text {
+    padding-left: 50px;
+}
+.story-card img {
     filter: grayscale(100%);
 }
 
-img:hover {
+.story-card img:hover {
     filter: unset;
 }
 
@@ -114,10 +138,10 @@ h3 {
     margin: 0;
 }
 
-#header-text {
+/* #header-text {
     flex-basis: 80%;
     display: flex;
-}
+} */
 
 nav {
     flex-basis: 20%;
@@ -136,18 +160,20 @@ a {
     color: var(--dark-font);
 }
 
-.title-text {
+.title-text h1 {
     color: var(--secondary-color);
     text-transform: uppercase;
 }
 
 .highlight-text {
-    color: var(--primary-color);  
+    color: var(--secondary-color);  
 }
 
 
 button,
-input {
+input,
+.story-card button a,
+.form-section textarea {
     color: var(--light-font);
     justify-content: center;
     border: unset;
@@ -157,26 +183,65 @@ input {
     font-size: 15px;
     font-weight: var(--bold-font);
     margin-top: 10px;
-    background-color: var(--bg-light);
-    color: var(--secondary-color);
+    background-color: var(--bg-dark);
+    color: var(--light-font);
     
 } 
 
 button:hover,
-input:hover {
+input:hover,
+.form-section textarea:hover,
+.story-card button:hover a{
     background-color: var(--secondary-color);
-    color: var(--light-font);
+    color: var(--dark-font);
 }
+
 
 .form-section {
     margin: 0 auto;
-    width: 100%;
-    color: var(--bg-dark);
+    width: 40%;
+    color: var(--dark-font);
+    font-weight: var(--bolder-font);
     display: flex;
     justify-content: center;
     padding: 2rem;
-    background-color: var(--highlight-color);
+    background-color: var(--tertiary-color);
+    box-shadow: var(--box-shadow-blue);
+    margin-top: 100px;
+    border-radius: 20px;
 }
 
+.form-header h2{
+    color: var(--secondary-color);
+}
 
+ .hero {
+    height: 500px;
+    width: 100%;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(to top, #3204fdba, #9907facc), url("https://spacecubed.com/wp-content/uploads/2020/06/pssmileproduction_shecodes-115-scaled.jpg") no-repeat center;
+  }
+
+  .footer {
+    margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #000000;
+      color: #f0f0f0;
+      padding-left: 20%;
+  }
+
+  .highlight {
+    font-family: var(--highlight-text);
+    font-size: 50px;
+}
+
+.story-footer {
+    margin-top: 100px;
+}
 
