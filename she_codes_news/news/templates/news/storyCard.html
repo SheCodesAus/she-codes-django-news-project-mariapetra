@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="story-card">
+<div class="story-card story-container-item">
     <a href="{% url 'news:story' story.id %}">
       {% if story.image %}
             <img src="{{ story.image }}">
@@ -8,20 +8,23 @@
             <img src="https://picsum.photos/600">
         {% endif %} 
         <div class="story-card-text">
-            <container class="container">
-                <h3>{{ story.title }}</h3><a href="{% url 'users:profile' story.author.id %}">
+            <container class="container story-card-text">
+                <h3>{{ story.title }}</h3><a href="{% url 'users:profile' story.author.id %}"></a>
                 <h4>Written by | {{ story.author }}</h4>
                 <h4>Published | {{ story.pub_date }}</h4>
                 <h4>Category | {{ story.category}}</h4>
-    
+                <div>
+                    <p class="story-card-p">{{ story.content|truncatechars:100 }}
+                    </p>
+                </div>
+                
                 {% if request.user.is_authenticated %}
-                <button class="story-button"><a href="{% url 'news:ammend' story.id %}">Edit this story</a></button>
+                <button><a class="story-button"href="{% url 'news:ammend' story.id %}">Edit this story</a></button>
                 <br>
                {% endif %}
                {% if request.user.is_authenticated %}
-                <button class="story-button"><a href="{% url 'news:delete' story.id %}">Delete</a></button>
+                <button class="story-button"><a class="story-button"href="{% url 'news:delete' story.id %}">Delete</a></button>
                {% endif %}
-               
             </container>
         </div>
     </a>

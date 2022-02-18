@@ -1,32 +1,38 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/debug.css' %}">
+{% endblock %}
 {% block content %}
 
 <div class="hero">
-    <h1>Hi {{ user.username }}, here are your <span class="highlight">stories</span></h1>
+    <h1>Hi {{ user.username }}, here are your stories</h1>
 </div>
 
-<div id="user.profile">
+<div id="user.profile story-container">
     <h2>{{ user.username }}</h2>
     {% if user.get_full_name %}
         <h3>{{ user.get_full_name }} &lt;{{ user.email }}&gt;</h3>
     {% else %}
         {{ user.email }}
     {% endif %}
-    
-    {% comment %} {% if user.image %}
-        <img src="{{ user.image }}">
-    {% else %}
-        <img src="{% static /user/deafault.jpg}">
-    {% endif %} {% endcomment %}
+ 
 
 </div>
 
-<div>
+<div class="story-container-item profile-container">
         {% for story in user_story %}
-        <h2><a href="{% url 'news:story' story.id %}"> {{ story.title }}, <br> {{ story.author.username }} </a></h2>  
+        <a href="{% url 'news:story' story.id %}"> 
+            {% if story.image %}
+            <img class="profile-img" src="{{ story.image }}">
+        {% else %}
+            <img class="profile-img" src="https://picsum.photos/600"><br>
+        {% endif %} 
+        <h2>Story Title | {{ story.title }}, <br> Story Category | {{ story.category }} </a><br>
+            {{ story.content|truncatechars:255 }}
+
+        </h2>  
         {% endfor %}
 </div>
 

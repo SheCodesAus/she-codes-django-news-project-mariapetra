@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+# import django_filters
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -10,12 +11,6 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         '''Return all news stories.'''
         return NewsStory.objects.all()
-
-# class CategoryListView(generic.ListView):
-#     template_name = 'news/index.html'
-    
-#     def get_queryset(self):
-#         return NewsStory.objects.filter(category=self.kwargs.get('pk'))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -52,5 +47,10 @@ class AmmendStoryView(LoginRequiredMixin, generic.UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class CategoryListView(generic.ListView):
+    template_name = 'news/index.html'  
+    def get_queryset(self):
+        return NewsStory.objects.filter(category=self.kwargs.get('pk'))
 
 

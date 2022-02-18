@@ -9,23 +9,33 @@
     justify-content: center;
     padding: 0;
     margin: auto;
-    /* padding: 50px; */
 }
 
 .story-card {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    /* box-shadow: var(--box-shadow-blue); */
     margin: 50px;
+}
+.story-card-p{
+    width: 250px;
+    text-align: center;
+    color: var(--light-font);
+}
+.story-container-item {
+    box-shadow: var(--box-shadow-blue);
+    border-radius: 20px;
+    justify-content: center;
 }
 
 .story-card-text {
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    margin: 12px;
+    color: var(--dark-font);
 }
 
-.story-card img {
+.story-card img,
+.profile-img {
     width: 300px;
     height: 300px;
     object-fit: cover;

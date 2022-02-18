@@ -8,8 +8,8 @@ urlpatterns = [
     path('<int:pk>', views.StoryView.as_view(), name='story'),
     path('<int:pk>/delete', views.DeleteStoryView.as_view(), name='delete'),
     path('<int:pk>/ammend', views.AmmendStoryView.as_view(), name='ammend'),
-    path('add-story/', views.AddStoryView.as_view(), name='newStory')
-    # path('category/', views.CategoryListView.as_view(), name='category')
+    path('add-story/', views.AddStoryView.as_view(), name='newStory'),
+    path('category/', views.CategoryListView.as_view(), name='category'),
 ]
 
 
