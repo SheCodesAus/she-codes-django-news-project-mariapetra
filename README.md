@@ -2,6 +2,7 @@
 
 Starter code for the Plus Django project.
 
+venv:
 USERNAME:
 mitiz@cats.com
 
