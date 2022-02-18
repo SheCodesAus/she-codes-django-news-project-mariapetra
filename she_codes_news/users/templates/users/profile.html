@@ -15,11 +15,11 @@
     {% else %}
         {{ user.email }}
     {% endif %}
-    
-    {% comment %} {% if user.image %}
+{% comment %}     
+ {% if user.image %}
         <img src="{{ user.image }}">
     {% else %}
-        <img src="{% static /user/deafault.jpg}">
+        <img src="https://picsum.photos/600">
     {% endif %} {% endcomment %}
 
 </div>
