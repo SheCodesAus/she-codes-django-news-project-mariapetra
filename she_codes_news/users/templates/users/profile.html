@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% load static %}
+<<<<<<< Updated upstream
 
+=======
+{% comment %} {% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/debug.css' %}">
+{% endblock %} {% endcomment %}
+>>>>>>> Stashed changes
 {% block content %}
 
 <div class="hero">
@@ -26,7 +32,16 @@
 
 <div>
         {% for story in user_story %}
-        <h2><a href="{% url 'news:story' story.id %}"> {{ story.title }}, <br> {{ story.author.username }} </a></h2>  
+        <a href="{% url 'news:story' story.id %}"> 
+            {% if story.image %}
+            <img class="profile-img" src="{{ story.image }}">
+        {% else %}
+            <img class="profile-img" src="https://picsum.photos/600"><br>
+        {% endif %} 
+        <h2>Story Title | {{ story.title }}, <br> Story Category | {{ story.category }} </a></h2> <br>
+            <p>{{ story.content|truncatechars:255 }}</p>
+
+         
         {% endfor %}
 </div>
 

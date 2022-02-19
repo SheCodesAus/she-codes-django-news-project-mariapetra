@@ -14,7 +14,7 @@
 
 .story-card {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     justify-content: space-evenly;
     /* box-shadow: var(--box-shadow-blue); */
     margin: 50px;
@@ -73,4 +73,15 @@
 
 .highlight-text-login {
     margin: 0 auto;
+}
+
+.profile-container {
+    width: 40%;
+    margin: 50px;
+    padding: 50px;
+    background-color: rgb(250, 237, 210);
+}
+
+.profile-container p {
+    color: var(--secondary-color)
 }
