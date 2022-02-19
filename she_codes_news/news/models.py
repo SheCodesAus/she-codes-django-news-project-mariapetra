@@ -1,7 +1,9 @@
-from datetime import datetime
+# from datetime import datetime
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.forms import CharField
+# from django.forms import CharField
+# import django_filters
+
 
 class Category(models.Model):
     name=models.CharField(max_length=200)
@@ -26,12 +28,4 @@ class NewsStory(models.Model):
         )
     class Meta: 
         ordering = ['-pub_date']
-
-    # categories = (
-    #     ("NEWS", "News"),
-    #     ("CUPCAKES", "Cupcakes"),
-    #     ("THINGS", "Things"),
-    # )
-
-   
 
