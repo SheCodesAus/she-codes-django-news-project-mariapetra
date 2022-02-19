@@ -2,7 +2,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 # from django.forms import CharField
-# import django_filters
 
 
 class Category(models.Model):
