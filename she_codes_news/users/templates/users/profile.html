@@ -3,33 +3,36 @@
 {% load static %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'news/debug.css' %}">
+{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'news/debug.css' %}"> {% endcomment %}
 {% endblock %}
 {% block content %}
 
 <div class="hero">
-    <h1>Hi {{ user.username }}, here are your stories</h1>
+    <h1>Hi {{ customuser.username }}, here are your stories</h1>
 </div>
 
-<div id="user.profile story-container">
-    <h2>{{ user.username }}</h2>
-    {% if user.get_full_name %}
-        <h3>{{ user.get_full_name }} &lt;{{ user.email }}&gt;</h3>
+<div id="customuser.profile story-container">
+    <h2>{{ customuser.username }}</h2>
+    {% if customuser.get_full_name %}
+        <h3>{{ customuser.get_full_name }} &lt;{{ customuser.email }}&gt;</h3>
     {% else %}
-        {{ user.email }}
+        {{ customuser.email }}
     {% endif %}
    
- {% if user.image %}
-        <img src="{{ user.image }}">
+ {% if customuser.profile_image %}
+        <img src="{{ customuser.profile_image }}">
     {% else %}
         <img src="https://picsum.photos/600">
     {% endif %} 
+</div>
 
- 
+<div>
+    <h2>Change profile</h2>
+    <a href="{% url 'users:ammendProfile' customuser.id %}"><button>Change here</button></a>
 </div>
 
 <div class="story-container-item profile-container">
-        {% for story in user_story %}
+        {% for story in customuser.newsstory_set.all %}
         <a href="{% url 'news:story' story.id %}"> 
             {% if story.image %}
             <img class="profile-img" src="{{ story.image }}">
@@ -37,9 +40,7 @@
             <img class="profile-img" src="https://picsum.photos/600"><br>
         {% endif %} 
         <h2>Story Title | {{ story.title }}, <br> Story Category | {{ story.category }} </a></h2> <br>
-            <p>{{ story.content|truncatechars:255 }}</p>
-
-    
+            <p>{{ story.content|truncatechars:255 }}</p>  
         {% endfor %}
 </div>
 
