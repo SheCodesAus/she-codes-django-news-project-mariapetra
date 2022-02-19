@@ -24,6 +24,35 @@
     {% endif %}
 </container>
 
+<section class="categories-section">
+    {% if categories %}
+        {% comment %} {% for cat in categories %} {% endcomment %}
+       <ul>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'news:categorydetail' 'Blogs'%}">Blogs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'news:categorydetail' 'Mentors'%}">Mentors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'news:categorydetail' 'She Codes Plus'%}">She Codes Plus</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'news:categorydetail' 'Events'%}">Events</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'news:categorydetail' 'Success Stories'%}">Success Stories</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'news:categorydetail' 'Success Stories'%}">Blogs</a>
+        </li>
+       </ul>
+     
+        {% comment %} {% endfor %} {% endcomment %}
+        {% endif %}
+
+</section>
+
 <section class="story-section">
     <container class="story-container">
         <section class="story-card">       

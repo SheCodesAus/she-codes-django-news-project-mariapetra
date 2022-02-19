@@ -1,8 +1,11 @@
+from re import template
+from django.forms import SlugField
 from django.views import generic
 from django.urls import reverse_lazy
-from .models import NewsStory
+from .models import NewsStory, Category
 from .forms import StoryForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 # import django_filters
 
 class IndexView(generic.ListView):
@@ -16,6 +19,7 @@ class IndexView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.all()[:2]
         context['all_stories'] = NewsStory.objects.all()
+        context['categories'] = Category.objects.all()
         return context
 
 class StoryView(generic.DetailView):
@@ -54,3 +58,6 @@ class CategoryListView(generic.ListView):
         return NewsStory.objects.filter(category=self.kwargs.get('pk'))
 
 
+class CategoryView(generic.DetailView):
+    model = Category
+    slug_field = 'name'

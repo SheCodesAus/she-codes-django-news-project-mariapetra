@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {{category}}
+    <section class="story-section">
+        <container class="story-container">
+            <section class="story-card">       
+                <div class="story-card">   
+                    {% if category.stories.all %}
+                        {% for story in category.stories.all %}
+                            {% include "./storyCard.html" with story=story %}
+                        {% endfor %}
+                    {% else %}
+                        <p>No stories are available.</p>
+                    {% endif %}
+                </div>
+            </section>
+        </container>
+        <section class="footer">
+        {% include './footer.html'%}
+        </section>
+    </section>
+
+{% endblock %}

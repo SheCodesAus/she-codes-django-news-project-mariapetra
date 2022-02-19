@@ -9,7 +9,8 @@
         {% endif %} 
         <div class="story-card-text">
             <container class="container story-card-text">
-                <h3>{{ story.title }}</h3><a href="{% url 'users:profile' story.author.id %}"></a>
+                <h3>{{ story.title }}</h3>
+                <a href="{% url 'users:profile' story.author.id %}"></a>
                 <h4>Written by | {{ story.author }}</h4>
                 <h4>Published | {{ story.pub_date }}</h4>
                 <h4>Category | {{ story.category}}</h4>
