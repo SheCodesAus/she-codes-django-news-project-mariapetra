@@ -25,7 +25,8 @@
     box-shadow: var(--box-shadow-main);
     border-radius: 20px;
     justify-content: center;
-    max-width: 50%;
+    width: 700px;
+    height: 400px;
 }
 
 .story-container-item:hover {
