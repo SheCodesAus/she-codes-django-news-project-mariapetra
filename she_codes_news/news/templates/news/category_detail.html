@@ -1,16 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="hero">
-    <h1>I am <span class="hero-highlight">proud</span> that I defy your 
-        <span class="hero-highlight">categories</span>. 
-        I am <span class="hero-highlight">proud</span> that I don't fit 
-        easily into any box. I am <span class="hero-highlight">proud</span> of all the things I am 
-            and all the 
-        things I can be. <span class="hero-highlight">Question yourself</span> every time you 
-            think you only see 
-        one thing in me.</h1>
+    <h1>Only the human mind invents <span class="hero-highlight">categories</span> and tries to force 
+        facts into separated pigeonholes.</h1>
 </div>
-    <h1 class="heading-text">{{category}}</h1>
+
+    <h1 class="heading-text">You're viewing stories about | {{category}}</h1>
     <br>
     <section class="story-section">
         <container class="story-container">
@@ -26,9 +21,7 @@
                 </div>
             </section>
         </container>
-        <section class="footer">
-        {% include './footer.html'%}
-        </section>
+       
     </section>
 
     <footer class="footer">

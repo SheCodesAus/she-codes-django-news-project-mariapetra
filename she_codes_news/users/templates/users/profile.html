@@ -2,9 +2,6 @@
 
 {% load static %}
 
-{% block stylesheets %}
-{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'news/debug.css' %}"> {% endcomment %}
-{% endblock %}
 {% block content %}
 
 <div class="hero">
@@ -13,8 +10,8 @@
 </div>
 <container>
 <div class="profile-section">
-        <h3 class="highlight-text">Hi {{ customuser.username }}</h3>
-        {% if customuser.get_full_name %}
+        <h1 class="highlight-text">Hi {{ customuser.username }}</h1>
+        {% if customuser.username %}
         <h2 class="highlight-text">Your registered email is: {{ customuser.email }}</h2>
         {% else %}
             {{ customuser.email }}
@@ -33,8 +30,9 @@
 </div>
 </container>
 
-<section>
-    <h2 class="highlight-text">All stories by {{ customuser.get_full_name }}</h2>
+<section class="profile-stories-section">
+    <h1 class="highlight-text profile-highlight-text">All stories by {{ customuser.username }}</h1>
+    <br><br>
     <div class="story-card story-container-item">
     <div class="story-card-text">
         <container class="container story-card-text">

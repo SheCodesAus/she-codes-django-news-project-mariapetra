@@ -13,6 +13,11 @@
 
 <div class="story-wrapper">
     <h4 class="story-author">Written by | {{ story.author }}</h4>
+    {% if story.image %}
+    <img class="profile-img" src="{{ story.image }}">
+    {% else %}
+    <img class="profile-img" src="https://picsum.photos/600">
+    {% endif %} 
     <h2 class="story-title">Title | {{ story.title }}</h2>
     <div class="story-content">
         {{ story.content|linebreaks }}
