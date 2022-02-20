@@ -13,9 +13,9 @@
 </div>
 <container>
 <div class="profile-section">
-        <h2>{{ customuser.username }}</h2>
+        <h3 class="highlight-text">Hi {{ customuser.username }}</h3>
         {% if customuser.get_full_name %}
-            <h3>{{ customuser.get_full_name }} &lt;{{ customuser.email }}&gt;</h3>
+        <h2 class="highlight-text">Your registered email is: {{ customuser.email }}</h2>
         {% else %}
             {{ customuser.email }}
         {% endif %}
@@ -25,17 +25,17 @@
         {% else %}
             <img class="profile-img" src="https://picsum.photos/600">
         {% endif %} 
-    {% comment %} </div> {% endcomment %}
 
     <div class="page-sub-right">
-        <h2>Change profile</h2>
+        <h2 class="highlight-text">Change profile</h2>
         <a href="{% url 'users:ammendProfile' customuser.id %}"><button>Change here</button></a>
    </div>
 </div>
 </container>
 
-<div class="story-card story-container-item">
-    
+<section>
+    <h2 class="highlight-text">All stories by {{ customuser.get_full_name }}</h2>
+    <div class="story-card story-container-item">
     <div class="story-card-text">
         <container class="container story-card-text">
             {% if customuser.newsstory_set.all %}
@@ -46,9 +46,9 @@
             <p>This author has no stories</p>
             {%endif%}
             </container>
-    </div>      
+     </div>      
 </div>
-
+<section>
 
 <section>
     <footer class="footer">

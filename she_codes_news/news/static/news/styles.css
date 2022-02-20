@@ -102,3 +102,9 @@
 .profile-container p {
     color: var(--secondary-color)
 }
+
+.profile-info,
+.profile-info h3 {
+    margin-left: 100px;
+    color: var(--dark-font)
+}
