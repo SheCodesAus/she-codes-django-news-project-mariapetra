@@ -29,43 +29,18 @@
         <div class="page-sub-right">
             <section class="categories-section">
                 <h2 class="category-header">Blog Categories</h2>
-                {% if categories %}
                 <ul>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Blog'%}">Blog</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Partnerships'%}">Partnerships</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Brisbane'%}">Brisbane</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Perth'%}">Perth</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Regional'%}">Regional</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Community Profiles'%}">Community Profiles</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Workshops'%}">Workshops</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Plus'%}">Plus</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'Flash'%}">Flash</a>
-                    </li>
-                    <li class="nav-item category-item">
-                        <a class="nav-link" href="{% url 'news:categorydetail' 'General' %}">General</a>
-                    </li>
+                    {% for category in categories %}
+                    {% if category %}
+                    <li class="nav-item category-item"><a href="{% url 'news:categorydetail' category %}">{{ category|capfirst}}</a></li>
+                    {% endif %}
+                    {% endfor %}
                 </ul>          
-            {% endif %}
+
             </div>
-    </container>
-    </section>
+        </section>
+
+        </container>
 
     <section class="story-section">
         <h2 class="heading-text">Latest News</h2>
@@ -85,7 +60,6 @@
     <section class="story-section">
         <h2 class="heading-text">All Stories</h2>
         <container class="story-container">
-            {% comment %} <section class="story-card">        {% endcomment %}
                 <div class="story-card all-stories-card">   
                     {% if all_stories %}
                         {% for story in all_stories %}
@@ -95,7 +69,6 @@
                         <p>No stories are available.</p>
                     {% endif %}
                 </div>
-            {% comment %} </section> {% endcomment %}
         </container>   
     </section>
 

@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {{category}}
+    <h1 class="heading-text">{{category}}</h1>
+    <br>
     <section class="story-section">
         <container class="story-container">
             <section class="story-card">       
@@ -20,6 +21,7 @@
         {% include './footer.html'%}
         </section>
     </section>
+
     <footer class="footer">
         {% include './footer.html'%}
     </footer>

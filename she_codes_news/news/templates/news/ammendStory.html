@@ -2,13 +2,14 @@
 
 {% block content %}
 <section class="form-section">
-{{ newsstory.title }}
-<form method="POST" action="#">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Ammend</button>
-</form>
+    {{ newsstory.title }}
+    <form method="POST" action="#">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ammend Story</button>
+    </form>
 </section>
+
 <footer class="footer">
     {% include './footer.html'%}
 </footer>

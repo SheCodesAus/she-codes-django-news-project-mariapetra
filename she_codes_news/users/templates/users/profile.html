@@ -34,27 +34,25 @@
 </div>
 </container>
 
-<container class="profile-stories-section">
-<div class=" profile-container">
-        <div class="story-container-item">
-            {% for story in customuser.newsstory_set.all %}
-            <a href="{% url 'news:story' story.id %}"> 
-                {% if story.image %}
-                <img class="profile-img" src="{{ story.image }}">
-            {% else %}
-                <img class="profile-img" src="https://picsum.photos/600"><br>
-            {% endif %} 
-            <h2>Story Title | {{ story.title }}, <br> Story Category | {{ story.category }} </a></h2> <br>
-                <p>{{ story.content|truncatechars:255 }}</p>  
+<div class="story-card story-container-item">
+    
+    <div class="story-card-text">
+        <container class="container story-card-text">
+            {% if customuser.newsstory_set.all %}
+                {% for story in customuser.newsstory_set.all %}
+                {% include "./userStoryCard.html" with story=story %}
             {% endfor %}
-        </div>
+            {%else%}
+            <p>This author has no stories</p>
+            {%endif%}
+            </container>
+    </div>      
 </div>
-</container>
 
 
 <section>
     <footer class="footer">
-    &copy; Copyright 2022 Maria Claydon | For She Codes Australia
+    {% comment %} {% include ./footer.html %} {% endcomment %}
 </footer>
 </section>
 

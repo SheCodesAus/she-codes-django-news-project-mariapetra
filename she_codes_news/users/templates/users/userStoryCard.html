@@ -1,0 +1,15 @@
+<div class="story-card story-container-item">
+        {% if story.image %}
+            <img class="profile-img" src="{{ story.image }}">
+        {% else %}
+            <img class="profile-img" src="https://picsum.photos/600">
+        {% endif %} 
+        <div class="story-card-text">
+            <a href="{% url 'news:story' story.id %}"> 
+        <br>
+        <h2>Story Title | {{ story.title }}, <br> Story Category | {{ story.category }}</a></h2> 
+        <br>
+        <p>{{ story.content|truncatechars:255 }}</p>  
+        </div>
+    </container>
+</div>  
