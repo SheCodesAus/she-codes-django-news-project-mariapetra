@@ -2,15 +2,30 @@
 
 {% block content %}
 
-{{ newsstory.title }}
+<div class="hero">
+    <h1>Really the <span class="hero-highlight">best</span> thing to do is keep hitting <span class="hero-highlight">delete</span>, 
+        <span class="hero-highlight">delete</span>, <span class="hero-highlight">delete</span>, 
+        <span class="hero-highlight">delete</span>. Just get rid of 
+        <span class="hero-highlight">everything</span>.
+</div>
+
+<section class="delete-section">
+<h1 class="highlight-text delete-section">{{ newsstory.title }}</h1>
 <br>
-{{ newsstory.content }}
-{{ newsstory.image}}
+<p class="story-card-p">{{ newsstory.content }}</p>
+{% if story.image %}
+<img class="profile-img" src="{{ story.image }}">
+{% else %}
+<img class="profile-img" src="https://picsum.photos/600">
+{% endif %} 
+</section>
 <form method="POST" action="#">
     {% csrf_token %}
     {{ form.as_p }}
-    <h1>Are you sure you want to delete {{ newsstory.title }}?</h1>
-    <button type="submit">Delete</button>
+    <h1 class="delete-section">Are you sure you want to delete {{ newsstory.title }}?</h1>
+    <br>
+    <button class= "delete-section" type="submit">Delete</button>
+    <br><br>
 </form>
 
 <footer class="footer">

@@ -110,3 +110,13 @@
     margin-left: 100px;
     color: var(--dark-font)
 }
+
+.delete-section {
+    margin-left: 50px;
+}
+
+.delete-section h1 {
+    border-bottom: 3px solid var(--bg-dark);
+    margin: 50px;
+    padding-bottom: 50px;
+}

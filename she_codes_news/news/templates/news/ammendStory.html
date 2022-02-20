@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<div class="hero">
+    <h1>I welcome <span class="hero-highlight">change</span> as long as nothing is 
+        <span class="hero-highlight">altered</span> or <span class="hero-highlight">different</span> 
+            than before.</h1>
+</div>
 <section class="form-section">
     {{ newsstory.title }}
     <form method="POST" action="#">
