@@ -20,8 +20,8 @@
     --secondary-shadow: #ffba00;
     --tertiary-shadow: #ffba00;
     --highlight-color: #000000;
-    --box-shadow-blue: 0px 2px 15px 2px var(--primary-shadow);
-    --box-shadow-pink: 0px 2px 15px 2px var(--secondary-shadow);
+    --box-shadow-main: 0px 2px 15px 2px var(--primary-shadow);
+    --box-shadow-secondary: 0px 2px 15px 2px var(--secondary-shadow);
     --bottom-margin: 0.5rem;
     --bottom-margin-2: 1rem;
     --line-height: 1.7rem;
@@ -48,7 +48,7 @@ header {
 }
 
 .navbar {
-    padding: 20px 20px;
+    padding: 20px;
 }
 
 .social-item img {
@@ -61,7 +61,6 @@ header {
 .navbar,
 .socials {
     width: 100%;
-    min-height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,11 +72,9 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 60px;
-  }
+}
 
-
-.navbar a
- {
+.navbar a {
     color: var(--dark-font);
     font-weight: var(--bolder-font);
     text-transform: uppercase;
@@ -109,12 +106,36 @@ header {
 
 .socials {
     background-color: var(--bg-dark);
-    padding: 0;
 }
 
 .title-text {
     padding-left: 50px;
 }
+
+.category-header {
+    margin-top: 50px;
+    margin-left: 50px;
+    color: var(--dark-font);
+    border-bottom: 3px dotted var(--secondary-color);
+}
+.category-item {
+    padding-left: 20px;
+    font-size: 20px;
+    list-style-image: url("https://shecodes.com.au/wp-content/uploads/2021/10/shecodes_cupcake.svg");
+}
+
+.page-sub-left {
+    float: left;
+    margin-top: 50px;
+}
+
+.page-sub-right {
+    float: right;
+    margin-right: 50px;
+    padding-right: 20px;
+    border-left: 3px dotted var(--secondary-color);
+}
+
 .story-card img,
 .profile-img {
     filter: grayscale(100%);
@@ -126,14 +147,9 @@ header {
 }
 
 h1 {
-    /* font-family: var(--main-font); */
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
-}
-
-.heading-text {
-    color: var(--secondary-color);
 }
 
 h3 {
@@ -165,6 +181,12 @@ a {
 
 .highlight-text {
     color: var(--secondary-color);  
+}
+
+.heading-text {
+    color: var(--secondary-color);
+    margin-left: 100px;
+    font-size: 50px;
 }
 
 button,
@@ -210,26 +232,40 @@ input:hover,
     color: var(--secondary-color);
 }
 
- .hero {
+.hero {
     height: 500px;
     width: 100%;
     color: var(--bg-light);
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
     background: linear-gradient(to top, #3204fdba, #9907facc), url("https://spacecubed.com/wp-content/uploads/2020/06/pssmileproduction_shecodes-115-scaled.jpg") no-repeat center;
-  }
+    text-align: center;
 
-  .footer {
+}
+
+.hero-highlight {
+    font-family: var(--highlight-text);
+    font-size: 80px;
+    text-shadow:
+      0 0 7px var(--bg-light),
+      0 0 10px var(--light-font),
+      0 0 21px var(--light-font),
+      0 0 42px var(--light-font),
+      0 0 82px var(--dark-font),
+      0 0 92px var(--dark-font),
+      0 0 102px var(--dark-font),
+      0 0 151px var(--dark-font);
+}
+.footer {
     margin: 0 auto;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      background-color: #000000;
-      color: #f0f0f0;
-      padding-left: 20%;
-  }
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #000000;
+    color: #f0f0f0;
+    padding-left: 20%;
+}
 
 .highlight {
     font-family: var(--highlight-text);
@@ -246,12 +282,10 @@ input:hover,
     justify-content: center;
 }
 
-.profile-container {
-    text-align: center;
-    justify-content: center;
-}
 
 .category-section {
     padding: 100px;
 }
+
+
 

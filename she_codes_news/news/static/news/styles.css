@@ -1,21 +1,19 @@
 .story-section {
     display: inline-block;
+    margin-right: 0;
+    width: 100%;
 }
 
 .story-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: auto;
 }
 
 .story-card {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 50px;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 .story-card-p{
     width: 250px;
@@ -23,9 +21,13 @@
     color: var(--light-font);
 }
 .story-container-item {
-    box-shadow: var(--box-shadow-blue);
+    box-shadow: var(--box-shadow-main);
     border-radius: 20px;
     justify-content: center;
+}
+
+.story-container-item:hover {
+    box-shadow: var(--box-shadow-secondary);
 }
 
 .story-card-text {
@@ -47,10 +49,6 @@
     display: block;
     padding: 20px;
     margin-left : 100px;
-}
-
-.heading-text {
-    font-size: 75px;
 }
 
 .welcome-back {
@@ -85,11 +83,20 @@
     margin: 0 auto;
 }
 
+.profile-section {
+    display: block;
+    flex-flow: column space-between;
+    margin-bottom: 100px;
+    padding: 100px;
+}
 .profile-container {
-    width: 40%;
-    margin: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
     padding: 50px;
     background-color: rgb(250, 237, 210);
+    text-align: center;
+    justify-content: center;
 }
 
 .profile-container p {

@@ -4,7 +4,6 @@
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
-{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'news/debug.css' %}"> {% endcomment %}
 
 {% endblock %}
 
@@ -14,81 +13,94 @@
     {% include './news-hero.html'%}
 </section>
 
-<container class="story-header">
-    <h2 class="heading-text">Latest News</h2>
-    {% if request.user.is_authenticated %}
-    <section>
-     <a class="welcome-back" href="{% url 'news:newStory' %}"><h2>Welcome Back, {{request.user.username}}!</h2>   
-        <button>Write a new story</button></a>
+<container class="page-container">
+    <div class="page-sub-left">
+        <container class="story-header">   
+            {% if request.user.is_authenticated %}
+            <section>
+                <a class="welcome-back" href="{% url 'news:newStory' %}"><h2>Welcome Back, {{request.user.username}}!</h2>   
+                <button>Write a new story</button></a>
+            </section>
+            {% endif %}
+        </container>
+    </div>
+
+
+        <div class="page-sub-right">
+            <section class="categories-section">
+                <h2 class="category-header">Blog Categories</h2>
+                {% if categories %}
+                <ul>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Blog'%}">Blog</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Partnerships'%}">Partnerships</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Brisbane'%}">Brisbane</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Perth'%}">Perth</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Regional'%}">Regional</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Community Profiles'%}">Community Profiles</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Workshops'%}">Workshops</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Plus'%}">Plus</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'Flash'%}">Flash</a>
+                    </li>
+                    <li class="nav-item category-item">
+                        <a class="nav-link" href="{% url 'news:categorydetail' 'General' %}">General</a>
+                    </li>
+                </ul>          
+            {% endif %}
+            </div>
+    </container>
     </section>
-    {% endif %}
-</container>
 
-<section class="categories-section">
-    {% if categories %}
-        {% comment %} {% for cat in categories %} {% endcomment %}
-       <ul>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'news:categorydetail' 'Blogs'%}">Blogs</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'news:categorydetail' 'Mentors'%}">Mentors</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'news:categorydetail' 'She Codes Plus'%}">She Codes Plus</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'news:categorydetail' 'Events'%}">Events</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'news:categorydetail' 'Success Stories'%}">Success Stories</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'news:categorydetail' 'Success Stories'%}">Blogs</a>
-        </li>
-       </ul>
-     
-        {% comment %} {% endfor %} {% endcomment %}
-        {% endif %}
+    <section class="story-section">
+        <h2 class="heading-text">Latest News</h2>
+            <container class="story-container">
+                    <div class="story-card">          
+                        {% if latest_stories %}
+                            {% for story in latest_stories %}
+                                {% include "./storyCard.html" with story=story position=forloop.counter %}                     
+                            {% endfor %}
+                        {% else %}
+                            <p>No stories are available.</p>
+                        {% endif %}
+                    </div>
+            </container>
+    </section>
 
-</section>
+    <section class="story-section">
+        <h2 class="heading-text">All Stories</h2>
+        <container class="story-container">
+            {% comment %} <section class="story-card">        {% endcomment %}
+                <div class="story-card all-stories-card">   
+                    {% if all_stories %}
+                        {% for story in all_stories %}
+                            {% include "./storyCard.html" with story=story %}
+                        {% endfor %}
+                    {% else %}
+                        <p>No stories are available.</p>
+                    {% endif %}
+                </div>
+            {% comment %} </section> {% endcomment %}
+        </container>   
+    </section>
 
-<section class="story-section">
-    <container class="story-container">
-        <section class="story-card">       
-            <div class="story-card">          
-                {% if latest_stories %}
-                    {% for story in latest_stories %}
-                        {% include "./storyCard.html" with story=story position=forloop.counter %}                     
-                    {% endfor %}
-                {% else %}
-                    <p>No stories are available.</p>
-                {% endif %}
-            </div>
-        </section>
-    </container>
-</section>
-
-<container class="story-header">
-    <h2 class="heading-text">All Stories</h2>
-</container>
-<section class="story-section">
-    <container class="story-container">
-        <section class="story-card">       
-            <div class="story-card">   
-                {% if all_stories %}
-                    {% for story in all_stories %}
-                        {% include "./storyCard.html" with story=story %}
-                    {% endfor %}
-                {% else %}
-                    <p>No stories are available.</p>
-                {% endif %}
-            </div>
-        </section>
-    </container>
-    <section class="footer">
+<footer class="footer">
     {% include './footer.html'%}
-    </section>
-</section>
+</footer>
   
 {% endblock content %} 

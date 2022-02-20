@@ -2,12 +2,15 @@
 
 {% block content %}
 <section class="form-section">
-{{ user.get_full_name }}
-<form method="POST" action="#">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Ammend your profile</button>
-</form>
+    <h1>Hi! {{ user.get_full_name }}</h1>
+        <form method="POST" action="#">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Ammend your profile</button>
+        </form>
 </section>
 
+<footer class="footer">
+    &copy; Copyright 2022 Maria Claydon | For She Codes Australia
+</footer>
 {% endblock content %}

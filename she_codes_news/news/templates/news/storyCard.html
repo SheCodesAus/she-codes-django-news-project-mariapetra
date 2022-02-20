@@ -1,7 +1,6 @@
 {% load static %}
 
 <div class="story-card story-container-item">
-    <a href="{% url 'news:story' story.id %}">
       {% if story.image %}
             <img src="{{ story.image }}">
         {% else %}
@@ -9,9 +8,8 @@
         {% endif %} 
         <div class="story-card-text">
             <container class="container story-card-text">
-                <h3>{{ story.title }}</h3>
-                <a href="{% url 'users:profile' story.author.id %}"></a>
-                <h4>Written by | {{ story.author }}</h4>
+                <h3><a href="{% url 'news:story' story.id %}">{{ story.title }}</h3>
+                <h4>Written by | <a href="{% url 'users:profile' story.author.id %}">{{ story.author }}</a></h4>
                 <h4>Published | {{ story.pub_date }}</h4>
                 <h4>Category | {{ story.category}}</h4>
                 <div>
