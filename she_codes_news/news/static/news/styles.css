@@ -17,16 +17,15 @@
     max-width: 100%;
 }
 .story-card-p{
-    width: 250px;
-    text-align: center;
     color: var(--light-font);
+    margin: 10px 70px;
 }
 .story-container-item {
     box-shadow: var(--box-shadow-main);
     border-radius: 20px;
     justify-content: center;
     width: 700px;
-    height: 1000px;
+    height: 900px;
 }
 
 .story-container-item:hover {
