@@ -287,6 +287,9 @@ input:hover,
     padding: 100px;
 }
 
+.create-account-btn a{
+    color: var(--light-font);
+}
 
 
 

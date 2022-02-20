@@ -7,21 +7,26 @@
 
 {% block content %}
 <div class="hero">
-    <h1>Login to create</h1>
+    <h1>Login to your <span class="hero-highlight">She Codes</span> portal, a place to 
+        <span class="hero-highlight">create</span> and <span class="hero-highlight">share</span>
+         your <span class="hero-highlight">experience</span> with others.
+    </h1>
 </div>
 
 
 <form class="form-section" method="post">
+    <h2>Welcome back :)</2>
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
 <container class="heading-text">
 <h2>No login? </h2>
-<a href="{% url 'users:createAccount' %}">Create Account</a>
+<button class="create-account-btn"><a href="{% url 'users:createAccount' %}">Create Account</a></button>
 </container>
-<footer>
-</footer>
+<br>
+<br>
+
 
 {% endblock %}
 

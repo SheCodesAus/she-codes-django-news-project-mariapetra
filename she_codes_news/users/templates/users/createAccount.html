@@ -2,18 +2,21 @@
 
  {% block content %}
 
- <h2 class="form-header">Create Account</h2>
+<section class="form-section">
+<h2 class="form-header">Create Account</h2>
 
- <form method="POST">
+ <form class="form-item" method="POST">
 
      {% csrf_token %}
      {{ form.as_p }}
 
-     <button type="submit">Create Account</button>
-     
+     <button type="submit">Create Account</button>   
  </form>
-
- <footer class="footer">
+</section>
+<br>
+<footer class="footer">
+    <br>
     &copy; Copyright 2022 Maria Claydon | For She Codes Australia
+    <br>
 </footer>
  {% endblock content %}
