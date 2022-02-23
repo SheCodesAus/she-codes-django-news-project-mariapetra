@@ -1,86 +1,124 @@
-.story-card {
-    margin: 2px;
-    border: 1px solid #000;
-    padding: 5px;
+.story-section {
+    display: inline-block;
+    margin-right: 0;
+    width: 100%;
 }
 
-.story-card img {
-    width: 100%;
+.story-container {
+    display: flex;
+}
+
+.story-card {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    max-width: 100%;
+}
+.story-card-p{
+    color: var(--light-font);
+    margin: 10px 70px;
+}
+.story-container-item {
+    box-shadow: var(--box-shadow-main);
+    border-radius: 20px;
+    justify-content: center;
+    width: 700px;
+    height: 900px;
+}
+
+.story-container-item:hover {
+    box-shadow: var(--box-shadow-secondary);
+}
+
+.story-card-text {
+    text-align: center;
+    margin: 12px;
+    color: var(--dark-font);
+}
+
+.story-card img,
+.profile-img {
+    width: 300px;
     height: 300px;
     object-fit: cover;
+    border-radius: 360px;
+    padding: 50px;
 }
 
-#latest-stories {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
-    max-height: 500px;
+.story-header {
+    display: block;
+    padding: 20px;
+    margin-left : 100px;
 }
 
-#story-card-1 {
-    grid-area: left-1;
+.welcome-back {
+    font-size: 20px;
 }
 
-#story-card-2 {
-    grid-area: right-1;
+.highlight {
+    font-family: var(--);
 }
 
-#story-card-3 {
-    grid-area: right-2;
+.story-content,
+.story-title,
+.story-author {
+    padding: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--dark-font);
+    margin: 100px;
 }
 
-#story-card-4 {
-    grid-area: right-3;
+.story-title {
+    color: var(--secondary-color);
+    border-bottom: 2px var(--dark-font) solid;
 }
 
-#story-card-2 a,
-#story-card-3 a,
-#story-card-4 a {
+.story-title,
+.highlight-text-login {
+    font-size: 50px;
+}
+
+.highlight-text-login {
+    margin: 0 auto;
+}
+
+.profile-section {
+    display: block;
+    flex-flow: column space-between;
+    margin-bottom: 100px;
+    padding: 100px;
+}
+.profile-container {
     display: flex;
-    max-height: 120px;
-    width: 100%;
-    height: 100%;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: rgb(250, 237, 210);
+    text-align: center;
+    justify-content: center;
 }
 
-#story-card-2 .story-card-text h3,
-#story-card-3 .story-card-text h3,
-#story-card-4 .story-card-text h3 {
-    font-size: 16px;
+.profile-container p {
+    color: var(--secondary-color)
 }
 
-#story-card-2 .story-card-text h4,
-#story-card-3 .story-card-text h4,
-#story-card-4 .story-card-text h4 {
-    font-size: 12px;
+.profile-info,
+.profile-info h3 {
+    margin-left: 100px;
+    color: var(--dark-font)
 }
 
-#story-card-2 img,
-#story-card-3 img,
-#story-card-4 img {
-    width: 33%;
-    height: 100%;
-    margin-right: 5px;
+.delete-section {
+    margin-left: 50px;
 }
 
-#all-stories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.delete-section h1 {
+    border-bottom: 3px solid var(--bg-dark);
+    margin: 50px;
+    padding-bottom: 50px;
 }
 
-#all-stories .story-card {
-    flex-basis: 32%;
-    flex-grow: 1;
-}
 
-#story-content {
-    text-align: justify;
-}
-
-#story-content img {
-    float: right;
-    margin: 0 0 10px 10px;
-    width: 50%;
-}

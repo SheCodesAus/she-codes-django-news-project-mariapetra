@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="hero">
+    <h1>Be <span class="hero-highlight">courageous</span> and try to 
+        <span class="hero-highlight">write</span> in a way that <span class="hero-highlight">scares you a little</span></h1>
+</div>
+<container>
+<div class="profile-section">
+        <h1 class="highlight-text">Hi {{ customuser.username }}</h1>
+        {% if customuser.username %}
+        <h2 class="highlight-text">Your registered email is: {{ customuser.email }}</h2>
+        {% else %}
+            {{ customuser.email }}
+        {% endif %}
+    
+        {% if customuser.profile_image %}
+            <img class="profile-img" src="{{ customuser.profile_image }}">
+        {% else %}
+            <img class="profile-img" src="https://picsum.photos/600">
+        {% endif %} 
+
+    <div class="page-sub-right">
+        <h2 class="highlight-text">Change profile</h2>
+        <a href="{% url 'users:ammendProfile' customuser.id %}"><button>Change here</button></a>
+   </div>
+</div>
+</container>
+
+<section class="profile-stories-section">
+    <h1 class="highlight-text profile-highlight-text">All stories by {{ customuser.username }}</h1>
+    <br><br>
+    <div class="story-card story-container-item">
+    <div class="story-card-text">
+        <container class="container story-card-text">
+            {% if customuser.newsstory_set.all %}
+                {% for story in customuser.newsstory_set.all %}
+                {% include "./userStoryCard.html" with story=story %}
+            {% endfor %}
+            {%else%}
+            <p>This author has no stories</p>
+            {%endif%}
+            </container>
+     </div>      
+</div>
+
+    <footer class="footer">
+        <br>
+        &copy; Copyright 2022 Maria Claydon | For She Codes Australia
+        <br>
+    </footer>
+
+{% endblock %}
+
+
+

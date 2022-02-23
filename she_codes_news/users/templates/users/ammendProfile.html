@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero">
+    <h1>When in doubt <span class="hero-highlight">choose </span>
+        <span class="hero-highlight">change</span>.</h1>
+</div>
+<section class="form-section">
+    <h1>Ammend all or part of your profile here.</h1>
+        <form method="POST" action="#">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Ammend your profile</button>
+        </form>
+</section>
+<br><br><br>
+<footer class="footer">
+    <br>
+    &copy; Copyright 2022 Maria Claydon | For She Codes Australia
+    <br>
+</footer>
+{% endblock content %}

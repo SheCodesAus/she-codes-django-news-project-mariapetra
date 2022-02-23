@@ -1,8 +1,33 @@
-<div id="story-wrapper">
-    <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
-    <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+    <h1>You are the <span class="hero-highlight">writer</span> of your own <span class="hero-highlight">story</span>.</h1>
+</div>
+
+<div class="story-wrapper">
+    <h4 class="story-author">Written by | {{ story.author }}</h4>
+    {% if story.image %}
+    <img class="profile-img" src="{{ story.image }}">
+    {% else %}
+    <img class="profile-img" src="https://picsum.photos/600">
+    {% endif %} 
+    <h2 class="story-title">Title | {{ story.title }}</h2>
+    <div class="story-content">
         {{ story.content|linebreaks }}
     </div>
+    {% for post in list_of_posts %}
+        {{ post.title }}
+        <img src="{{ story.image }}"
+        {% endfor %}
 </div>
+<footer class="footer">
+    {% include './footer.html'%}
+</footer>
+{% endblock %}

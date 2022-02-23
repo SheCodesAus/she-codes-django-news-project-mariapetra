@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Login to your <span class="hero-highlight">She Codes</span> portal, a place to 
+        <span class="hero-highlight">create</span> and <span class="hero-highlight">share</span>
+         your <span class="hero-highlight">experience</span> with others.
+    </h1>
+</div>
+
+
+<form class="form-section" method="post">
+    <h2>Welcome back :)</2>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+<container class="heading-text">
+<h2>No login? </h2>
+<button class="create-account-btn"><a href="{% url 'users:createAccount' %}">Create Account</a></button>
+</container>
+<br>
+<br>
+
+
+{% endblock %}
+

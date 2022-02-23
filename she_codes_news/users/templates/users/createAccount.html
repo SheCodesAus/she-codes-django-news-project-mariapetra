@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+    <div class="hero">
+        <h1><span class="hero-highlight">Create </span>whatever causes a  
+            <span class="hero-highlight">revolution</span> in your <span class="hero-highlight">heart</span> 
+                .</h1>
+    </div>
+    <section class="form-section">
+    <h1 class="form-header">Create your account to share with our community</h1>
+
+    <form class="form-item" method="POST">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Create Account</button>   
+    </form>
+    </section>
+    <br><br><br>
+<footer class="footer">
+    <br>
+    &copy; Copyright 2022 Maria Claydon | For She Codes Australia
+    <br>
+</footer>
+ {% endblock content %}

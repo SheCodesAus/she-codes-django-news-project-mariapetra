@@ -1,39 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;700;800&family=Satisfy&display=swap');
+
+
+:root {
+    --main-font: 'Raleway', sans-serif;
+    --highlight-text: 'Satisfy', cursive;
+    --standard-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bg-dark: #8246af;
+    --bg-mid: #ffba00;
+    --bg-light: #f0f0f0;
+    --dark-font: #8246af;
+    --shadow-font: #444444;
+    --light-font: #ffba00;
+    --primary-color: #083fd0;
+    --secondary-color: #ffba00;
+    --tertiary-color: #fdeca7;
+    --primary-shadow: #8246af;
+    --secondary-shadow: #ffba00;
+    --tertiary-shadow: #ffba00;
+    --highlight-color: #000000;
+    --box-shadow-main: 0px 2px 15px 2px var(--primary-shadow);
+    --box-shadow-secondary: 0px 2px 15px 2px var(--secondary-shadow);
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+  
+}
 
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: var(--bg-light);
+    font-family: var(--main-font);   
+    margin: 0 auto;
+    width: 100%;
+    color: var(--dark-font);
 }
 
+text {
+    color: var(--dark-font);
+}
 header {
     display: flex;
+    background-color: var(--bg-light);
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    width: 100%;
+    margin: 0;
 }
 
-img {
+.navbar {
+    padding: 20px;
+}
+
+.social-item img {
+    width: 20px;
+    height: 20px;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+    padding: 0;
+}
+.navbar,
+.socials {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu,
+.social-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.navbar a {
+    color: var(--dark-font);
+    font-weight: var(--bolder-font);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar a:hover
+{
+    color: var(--dark-font);
+    background-color: var(--secondary-color);
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+  
+.navbar ul,
+.socials ul {
+    display: flex;
+    gap: 3rem;
+    margin-right: 1.2rem;
+}
+
+.navbar ul li,
+.socials ul li {
+    list-style-type: none;
+    margin: 1rem;
+    justify-items: flex-end;
+}
+
+.socials {
+    background-color: var(--bg-dark);
+}
+
+.title-text {
+    padding-left: 50px;
+}
+
+.category-header {
+    margin-top: 50px;
+    margin-left: 50px;
+    color: var(--dark-font);
+    border-bottom: 3px dotted var(--secondary-color);
+}
+.category-item {
+    padding-left: 20px;
+    font-size: 20px;
+    list-style-image: url("https://shecodes.com.au/wp-content/uploads/2021/10/shecodes_cupcake.svg");
+}
+
+.page-sub-left {
+    float: left;
+    margin-top: 50px;
+}
+
+.page-sub-right {
+    float: right;
+    margin-right: 50px;
+    padding-right: 20px;
+    border-left: 3px dotted var(--secondary-color);
+}
+
+.story-card img,
+.profile-img {
     filter: grayscale(100%);
 }
 
+.story-card img:hover,
+.profile-img:hover {
+    filter: unset;
+}
+
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
 }
 
-h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
-}
-
 h3 {
     font-size: 2rem;
     margin: 0;
-}
-
-#header-text {
-    flex-basis: 80%;
-    display: flex;
 }
 
 nav {
@@ -46,9 +168,129 @@ nav {
 a {
     margin: 2px;
     text-decoration: none;
-    color: #000;
+    color: var(--dark-font)
 }
 
-a, p {
-    font-family: monospace;
+.nav a {
+    color: var(--dark-font);
 }
+
+.title-text h1 {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.highlight-text {
+    color: var(--secondary-color);  
+}
+
+.heading-text {
+    color: var(--secondary-color);
+    margin-left: 100px;
+    font-size: 50px;
+}
+
+button,
+input,
+.story-card button a,
+.form-section textarea {
+    color: var(--light-font);
+    justify-content: center;
+    border: unset;
+    padding-bottom: 2rem;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: var(--bold-font);
+    margin-top: 10px;
+    background-color: var(--bg-dark);
+    color: var(--light-font);   
+} 
+
+button:hover,
+input:hover,
+.form-section textarea:hover,
+.story-card button:hover a{
+    background-color: var(--secondary-color);
+    color: var(--dark-font);
+}
+
+.form-section {
+    margin: 0 auto;
+    width: 40%;
+    color: var(--dark-font);
+    font-weight: var(--bolder-font);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--tertiary-color);
+    box-shadow: var(--box-shadow-blue);
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.form-header h2{
+    color: var(--secondary-color);
+}
+
+.hero {
+    height: 500px;
+    width: 100%;
+    color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background: linear-gradient(to top, #3204fdba, #9907facc), url("https://spacecubed.com/wp-content/uploads/2020/06/pssmileproduction_shecodes-115-scaled.jpg") no-repeat center;
+    text-align: center;
+
+}
+
+.hero-highlight {
+    font-family: var(--highlight-text);
+    font-size: 80px;
+    text-shadow:
+      0 0 7px var(--bg-light),
+      0 0 10px var(--light-font),
+      0 0 21px var(--light-font),
+      0 0 42px var(--light-font),
+      0 0 82px var(--dark-font),
+      0 0 92px var(--dark-font),
+      0 0 102px var(--dark-font),
+      0 0 151px var(--dark-font);
+}
+.footer {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #000000;
+    color: #f0f0f0;
+    padding-left: 20%;
+}
+
+.highlight {
+    font-family: var(--highlight-text);
+    font-size: 50px;
+}
+
+.story-footer {
+    margin-top: 100px;
+}
+
+.login-section {
+    margin: 40%;
+    display: block;
+    justify-content: center;
+}
+
+.category-section {
+    padding: 100px;
+}
+
+.create-account-btn a{
+    color: var(--light-font);
+}
+
+
+
+
