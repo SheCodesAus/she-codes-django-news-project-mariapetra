@@ -14,7 +14,7 @@ USERNAME:
 superUserHeroku
 
 PASSWORD:
-mitzilovesmice
+MitziLovesMice
 
 User:
 
@@ -22,7 +22,7 @@ USERNAME:
 MariaPetra
 
 PASSWORD:
-mitzilovesmice
+MitziLovesMice
 
 
 virtual environment admin login:
